@@ -1,6 +1,24 @@
 # AliLogDemo
 [阿里日志SDK v2.0.0][阿里日志SDK]封装
 
+## 集成
+
+1. 使用 jitpack 仓库
+
+``` Gradle
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+2. 引入 Library
+
+``` Gradle
+implementation 'com.github.niulinguo:AliLogDemo:v1.0'
+```
+
 ## 使用方式
 
 1. 初始化
