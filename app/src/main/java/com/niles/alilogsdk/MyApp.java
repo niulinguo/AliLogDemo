@@ -19,6 +19,9 @@ import java.util.TimerTask;
  */
 public class MyApp extends Application {
 
+    private static final String END_POINT = "cn-shanghai.log.aliyuncs.com";
+    private static final String PROJECT = "tt-sdk";
+    private static final String LOG_STORE = "logstore-tt-sdk";
     private static final DateFormat DATE_FORMAT;
 
     static {
@@ -32,11 +35,13 @@ public class MyApp extends Application {
                 AliLogConfig
                         .newBuilder()
                         .setPrintLog(true)
-                        .setEndPoint("cn-shanghai.log.aliyuncs.com")
+                        .setEndPoint(END_POINT)
+                        // STS 方式
 //                        .setSTSUrl(BuildConfig.STS_URL)
+                        // 主账号方式
                         .setAccessKey(BuildConfig.ACCESS_KEY_ID, BuildConfig.ACCESS_KEY_SECRET)
-                        .setProject("tt-sdk")
-                        .setLogStore("logstore-tt-sdk")
+                        .setProject(PROJECT)
+                        .setLogStore(LOG_STORE)
                         .setConnectType(AliLogConfig.NetworkPolicy.WWAN_OR_WIFI)
                         .build());
 
