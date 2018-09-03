@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -27,10 +27,23 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+    implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.aliyun.openservices:aliyun-log-android-sdk:2.0.0'
+    // AliLog
+    implementation ('com.aliyun.openservices:aliyun-log-android-sdk:2.0.0') {
+        exclude group: 'com.alibaba', module: 'fastjson'
+    }
+
+    // JSON
+    //noinspection GradleDependency
+    implementation 'com.alibaba:fastjson:1.1.68.android'
+
+    // HTTP
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+
+    // GreenDao
+    implementation 'org.greenrobot:greendao:3.2.2'
 }
